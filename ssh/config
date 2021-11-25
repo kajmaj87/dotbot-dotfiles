@@ -1,0 +1,9 @@
+Host pi
+  HostName kickerserver.ddns.net
+  User pi
+  Port 41994
+  IdentityFile ~/.ssh/id_rsa_old
+
+Host 192.168.1.27
+  HostName 192.168.1.27
+  User kik
