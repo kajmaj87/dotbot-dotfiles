@@ -1,0 +1,2 @@
+export RUSTC_WRAPPER=/home/kajman/.cargo/bin/sccache
+export EDITOR=vim

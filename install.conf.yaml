@@ -1,3 +1,7 @@
+- defaults:
+    link:
+      relink: true
+
 - clean: ['~']
 
 - create:
@@ -6,6 +10,9 @@
   - ~/projects
 
 - link:
+    ~/.aliases: aliases
+    ~/.environment: environment
+    ~/.functions: functions
     ~/.gitconfig: gitconfig
     ~/.vim/vimrc:
         path: vim/vimrc
@@ -15,6 +22,6 @@
         path: config/redshift/
         create: true
 - shell:
-  - [sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"]
+  - [curl -L git.io/antigen > antigen.zsh]
 
 

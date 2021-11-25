@@ -1,0 +1,14 @@
+alias cargo='mold -run cargo'
+
+
+alias gp='git pull'
+alias gs='git status'
+alias ga='git add .; git status'
+alias gc='gitCommitAndPush'
+alias gd='git diff'
+alias gr='git checkout -- .'
+alias gm='gp; git checkout -B master origin/master'
+alias gac='git add .; git commit -m'
+
+
+alias r4bi='ssh pi@193.239.58.220 -p 27843'
