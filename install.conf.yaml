@@ -10,12 +10,7 @@
     ~/.vim/vimrc:
         path: vim/vimrc
         create: true
-    ~/.zshrc: 
-        path: zshrc
-        force: true
-    ~/bin:
-        path: bin/
-        create: true
+    ~/.zshrc: zshrc
     ~/.config/redshift:
         path: config/redshift/
         create: true
