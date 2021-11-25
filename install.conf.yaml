@@ -24,11 +24,12 @@
 - shell:
   - [curl -L git.io/antigen > antigen.zsh]
   - 
-    command: chsh -s $(which zsh)
+    command: '(! [[ $SHELL =~ "zsh" ]] && chsh -s $(which zsh)) || true'
     stdin: true
     stdout: true
     stderr: true
-    description: Change shell to zsh
+    description: Change shell to zsh if not already
     quiet: false
+  - [zsh -c "source ~/.zshrc", "Install zsh plugins"]
 
 

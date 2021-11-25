@@ -12,9 +12,9 @@ antigen bundle battery
 antigen bundle python
 antigen bundle stack
 antigen bundle zsh-autosuggestions
-antigen bundle z
 antigen bundle fzf
 antigen bundle command-not-found
+antigen bundle alias-finder
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
