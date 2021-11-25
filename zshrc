@@ -8,7 +8,12 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle pip
+antigen bundle battery
+antigen bundle python
+antigen bundle stack
+antigen bundle zsh-autosuggestions
+antigen bundle z
+antigen bundle fzf
 antigen bundle command-not-found
 
 # Syntax highlighting bundle.
