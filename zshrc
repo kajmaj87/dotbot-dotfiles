@@ -25,3 +25,5 @@ antigen theme robbyrussell
 # Tell Antigen that you're done.
 antigen apply
 
+# show which alias to use when typing a long command
+ZSH_ALIAS_FINDER_AUTOMATIC=true
