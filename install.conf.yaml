@@ -23,6 +23,12 @@
         create: true
 - shell:
   - [curl -L git.io/antigen > antigen.zsh]
-  - [chsh -s $(which zsh)]
+  - 
+    command: chsh -s $(which zsh)
+    stdin: true
+    stdout: true
+    stderr: true
+    description: Change shell to zsh
+    quiet: false
 
 
