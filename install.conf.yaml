@@ -10,12 +10,16 @@
     ~/.vim/vimrc:
         path: vim/vimrc
         create: true
-    ~/.zshrc: zshrc
+    ~/.zshrc: 
+        path: zshrc
+        force: true
     ~/bin:
         path: bin/
         create: true
     ~/.config/redshift:
         path: config/redshift/
         create: true
+- shell:
+  - [sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"]
 
 
