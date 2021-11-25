@@ -30,6 +30,7 @@
     stderr: true
     description: Change shell to zsh if not already
     quiet: false
-  - [zsh -c "source ~/.zshrc", "Install zsh plugins"]
+  - [zsh]
+  - [. ~/.zshrc]
 
 
