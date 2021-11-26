@@ -2,6 +2,7 @@ alias cargo='mold -run cargo'
 
 
 alias gp='git pull'
+alias gps='git push'
 alias gs='git status'
 alias ga='git add .; git status'
 alias gc='gitCommitAndPush'
