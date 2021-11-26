@@ -18,6 +18,7 @@
         path: vim/vimrc
         create: true
     ~/.zshrc: zshrc
+    ~/.p10k.zsh: p10k.zsh
     ~/.config/redshift:
         path: config/redshift/
         create: true
@@ -30,7 +31,5 @@
     stderr: true
     description: Change shell to zsh if not already
     quiet: false
-  - [zsh]
-  - [. ~/.zshrc]
 
 
