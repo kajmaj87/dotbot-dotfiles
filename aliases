@@ -11,5 +11,7 @@ alias gr='git checkout -- .'
 alias gm='gp; git checkout -B master origin/master'
 alias gac='git add .; git commit -m'
 
+alias ll='ls -lha'
+
 
 alias r4bi='ssh pi@193.239.58.220 -p 27843'
