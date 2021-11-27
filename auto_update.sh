@@ -7,6 +7,11 @@ DOTFILES=~/.dotfiles
 
 cd "$DOTFILES" || exit
 
+if [[ `git status --porcelain` ]]; then
+	echo "There are uncommited changes in $DOTFILES!"
+fi
+
+
 git remote update
 
 # Were are we locally
