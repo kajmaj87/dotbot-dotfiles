@@ -47,7 +47,7 @@ imap jk <esc>
 "--------------------------------------------------------------------------
 
 " Automatically install vim-plug
-let data_dir = has('vim') ? stdpath('data') . '/site' : '~/.vim'
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -56,6 +56,7 @@ endif
 call plug#begin(data_dir . '/plugins')
 
 " source ~/.config/vim/plugins/abolish.vim
+source ~/.config/vim/plugins/everforest.vim
 source ~/.config/vim/plugins/airline.vim
 " source ~/.config/vim/plugins/arduino.vim
 " source ~/.config/vim/plugins/coc.vim
@@ -65,7 +66,6 @@ source ~/.config/vim/plugins/commentary.vim
 " source ~/.config/vim/plugins/dracula.vim
 " source ~/.config/vim/plugins/editorconfig.vim
 " source ~/.config/vim/plugins/eunuch.vim
-source ~/.config/vim/plugins/everforest.vim
 " source ~/.config/vim/plugins/exchange.vim
 " source ~/.config/vim/plugins/firevim.vim
 " source ~/.config/vim/plugins/floaterm.vim
@@ -98,3 +98,6 @@ source ~/.config/vim/plugins/everforest.vim
 " source ~/.config/vim/plugins/which-key.vim
 
 call plug#end()
+
+" this must happen after plugins are loaded
+colorscheme everforest

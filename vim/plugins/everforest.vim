@@ -11,4 +11,3 @@ set background=dark
 " This configuration option should be placed before `colorscheme everforest`.
 " Available values: 'hard', 'medium'(default), 'soft'
 let g:everforest_background = 'soft'
-colorscheme everforest
