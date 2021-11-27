@@ -31,5 +31,3 @@
     stderr: true
     description: Change shell to zsh if not already
     quiet: false
-
-
