@@ -6,9 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source ~/.dotfiles/antigen.zsh
-source ~/.aliases
-source ~/.environment
-source ~/.functions
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -34,6 +31,10 @@ antigen apply
 
 # show which alias to use when typing a long command
 ZSH_ALIAS_FINDER_AUTOMATIC=true
+
+source ~/.aliases
+source ~/.environment
+source ~/.functions
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
