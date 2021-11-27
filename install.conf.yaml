@@ -8,6 +8,8 @@
   - ~/bin
   - ~/tools
   - ~/projects
+  - ~/.config/vim
+  - ~/.local/share/vim/backup
 
 - link:
     ~/.aliases: aliases
@@ -23,7 +25,9 @@
     ~/.config/redshift:
         path: config/redshift/
         create: true
+    ~/.config/vim/plugins: vim/plugins
 - shell:
+  - [git submodule update --init --recursive, Installing submodules]
   - [curl -L git.io/antigen > antigen.zsh]
   - 
     command: '(! [[ $SHELL =~ "zsh" ]] && chsh -s $(which zsh)) || true'
@@ -32,3 +36,4 @@
     stderr: true
     description: Change shell to zsh if not already
     quiet: false
+  - ["vim +PlugUpdate +PlugClean! +qa", Installing and updating plugins]
