@@ -11,6 +11,7 @@
 
 - link:
     ~/.aliases: aliases
+    ~/bin/auto_update.sh: auto_update.sh
     ~/.environment: environment
     ~/.functions: functions
     ~/.gitconfig: gitconfig
