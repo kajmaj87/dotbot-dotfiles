@@ -70,7 +70,7 @@ source ~/.config/vim/plugins/commentary.vim
 " source ~/.config/vim/plugins/firevim.vim
 " source ~/.config/vim/plugins/floaterm.vim
 " source ~/.config/vim/plugins/fugitive.vim
-" source ~/.config/vim/plugins/fzf.vim
+source ~/.config/vim/plugins/fzf.vim
 " source ~/.config/vim/plugins/heritage.vim
 " source ~/.config/vim/plugins/lastplace.vim
 " source ~/.config/vim/plugins/lion.vim
