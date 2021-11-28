@@ -21,7 +21,7 @@ antigen bundle stack
 antigen bundle zsh-autosuggestions
 antigen bundle fzf
 antigen bundle command-not-found
-antigen bundle alias-finder
+antigen bundle "MichaelAquilina/zsh-you-should-use"
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -33,7 +33,8 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # show which alias to use when typing a long command
-ZSH_ALIAS_FINDER_AUTOMATIC=true
+YSU_MESSAGE_POSITION="after"
+YSU_HARDCORE=1
 
 source ~/.aliases
 source ~/.environment
