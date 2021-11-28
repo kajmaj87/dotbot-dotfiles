@@ -5,6 +5,7 @@ set hidden
 set relativenumber
 set number
 set undofile
+set undodir=~/.local/share/vim/undo//
 set title
 set ignorecase
 set smartcase

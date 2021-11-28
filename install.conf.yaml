@@ -10,6 +10,7 @@
   - ~/projects
   - ~/.config/vim
   - ~/.local/share/vim/backup
+  - ~/.local/share/vim/undo
 
 - link:
     ~/.aliases: aliases
