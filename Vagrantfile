@@ -65,6 +65,7 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
 config.vm.provision "shell", privileged: false, inline: <<-SHELL
   rm -rf ~/.dotfiles
+  rm ~/.vimrc
   git clone https://github.com/kajmaj87/dotbot-dotfiles ~/.dotfiles
 SHELL
 end
