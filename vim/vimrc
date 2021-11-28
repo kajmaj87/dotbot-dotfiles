@@ -11,11 +11,14 @@ set ignorecase
 set smartcase
 set wildmode=longest:full,full
 set nowrap
+" next two are for showing whitespace (leading tabs and trailing spaces)
 set list
 set listchars=tab:▸\ ,trail:·
+" allow mouse usage in all modes
 set mouse=a
 set scrolloff=8
 set sidescrolloff=8
+" do not add two spaces when joining after . or ? or ! (shift+J in normal mode)
 set nojoinspaces
 set splitright
 set clipboard=unnamedplus
