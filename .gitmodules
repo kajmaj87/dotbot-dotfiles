@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "fasd"]
+	path = fasd
+	url = https://github.com/clvv/fasd

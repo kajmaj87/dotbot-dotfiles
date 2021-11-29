@@ -13,5 +13,9 @@ alias gac='git add .; git commit -m'
 
 alias ll='ls -lha'
 
+# fasd
+alias v='f -e vim'
+alias o='a -e xdg-open'
+
 
 alias r4bi='ssh pi@193.239.58.220 -p 27843'
