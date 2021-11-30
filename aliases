@@ -9,6 +9,7 @@ alias gc='gitCommitAndPush'
 alias gd='git diff'
 alias gr='git checkout -- .'
 alias gm='gp; git checkout -B master origin/master'
+alias gmm='git merge origin/master'
 alias gac='git add .; git commit -m'
 
 alias ll='ls -lha'
