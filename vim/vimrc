@@ -75,6 +75,7 @@ source ~/.config/vim/plugins/commentary.vim
 " source ~/.config/vim/plugins/context-commentstring.vim
 " source ~/.config/vim/plugins/dispatch.vim
 " source ~/.config/vim/plugins/dracula.vim
+source ~/.config/vim/plugins/easymotion.vim
 " source ~/.config/vim/plugins/editorconfig.vim
 " source ~/.config/vim/plugins/eunuch.vim
 " source ~/.config/vim/plugins/exchange.vim
@@ -93,12 +94,12 @@ source ~/.config/vim/plugins/fzf.vim
 " source ~/.config/vim/plugins/polyglot.vim
 " source ~/.config/vim/plugins/projectionist.vim
 " source ~/.config/vim/plugins/quickscope.vim
-" source ~/.config/vim/plugins/repeat.vim
+source ~/.config/vim/plugins/repeat.vim
 " source ~/.config/vim/plugins/rooter.vim
 " source ~/.config/vim/plugins/sayonara.vim
 " source ~/.config/vim/plugins/smooth-scroll.vim
 " source ~/.config/vim/plugins/splitjoin.vim
-" source ~/.config/vim/plugins/surround.vim
+source ~/.config/vim/plugins/surround.vim
 " source ~/.config/vim/plugins/targets.vim
 " source ~/.config/vim/plugins/textobj-xmlattr.vim
 " source ~/.config/vim/plugins/tmux-navigator.vim
