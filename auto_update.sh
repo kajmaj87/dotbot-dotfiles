@@ -7,12 +7,10 @@ DOTFILES=~/.dotfiles
 
 cd "$DOTFILES" || exit
 
-if [[ `git status --porcelain` ]]; then
-	echo "There are uncommited changes in $DOTFILES!"
-fi
-
-
 git remote update
+
+
+
 
 # Were are we locally
 LAST_UPDATE=$(git show --no-notes --format=format:"%H" $BRANCH | head -n 1)
@@ -26,6 +24,12 @@ if [ "$LAST_COMMIT" != "$LAST_UPDATE" ]; then
         git pull --no-edit
 else
         echo "No updates in $DOTFILES available"
+fi
+
+if [[ `git status --porcelain` ]]; then
+	echo "There are uncommited changes in $DOTFILES!"
+    echo "Commit and push changes."
+    exit
 fi
 
 cd "$START_DIR" || exit
