@@ -21,5 +21,8 @@ alias o='a -e xdg-open'
 # arch/manjaro
 alias up='yay -Syu --noconfirm'
 
+# zsh related
+alias or='omz reload'
+
 
 alias r4bi='ssh pi@193.239.58.220 -p 27843'

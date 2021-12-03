@@ -9,9 +9,6 @@ cd "$DOTFILES" || exit
 
 git remote update
 
-
-
-
 # Were are we locally
 LAST_UPDATE=$(git show --no-notes --format=format:"%H" $BRANCH | head -n 1)
 
@@ -23,6 +20,7 @@ if [ "$LAST_COMMIT" != "$LAST_UPDATE" ]; then
         echo "Updating $DOTFILES from branch $BRANCH"
         git pull --no-edit
         $DOTFILES/install.sh
+        omz reload
 else
         echo "No updates in $DOTFILES available"
 fi
