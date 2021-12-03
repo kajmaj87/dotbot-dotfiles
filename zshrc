@@ -31,6 +31,8 @@ antigen theme romkatv/powerlevel10k
 source ~/.aliases
 source ~/.environment
 source ~/.functions
+# used for env variables that are not shared in .dotfiles repo
+source ~/.overrides
 # should be started after custom aliases are loaded
 antigen bundle "MichaelAquilina/zsh-you-should-use"
 
