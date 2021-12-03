@@ -22,6 +22,7 @@ LAST_COMMIT=$(git show --no-notes --format=format:"%H" origin/$BRANCH | head -n 
 if [ "$LAST_COMMIT" != "$LAST_UPDATE" ]; then
         echo "Updating $DOTFILES from branch $BRANCH"
         git pull --no-edit
+        $DOTFILES/install.sh
 else
         echo "No updates in $DOTFILES available"
 fi
