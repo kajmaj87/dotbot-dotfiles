@@ -21,7 +21,6 @@ antigen bundle stack
 antigen bundle zsh-autosuggestions
 antigen bundle fzf
 antigen bundle command-not-found
-antigen bundle "MichaelAquilina/zsh-you-should-use"
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -29,17 +28,18 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Load the theme.
 antigen theme romkatv/powerlevel10k
 
+source ~/.aliases
+source ~/.environment
+source ~/.functions
+# should be started after custom aliases are loaded
+antigen bundle "MichaelAquilina/zsh-you-should-use"
+
 # Tell Antigen that you're done.
 antigen apply
 
 # show which alias to use when typing a long command
 YSU_MESSAGE_POSITION="after"
 YSU_HARDCORE=1
-
-source ~/.aliases
-source ~/.environment
-source ~/.functions
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

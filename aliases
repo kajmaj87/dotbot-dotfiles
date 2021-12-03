@@ -18,5 +18,8 @@ alias ll='ls -lha'
 alias v='f -e vim'
 alias o='a -e xdg-open'
 
+# arch/manjaro
+alias up='yay -Syu --noconfirm'
+
 
 alias r4bi='ssh pi@193.239.58.220 -p 27843'
