@@ -41,6 +41,8 @@ antigen bundle "MichaelAquilina/zsh-you-should-use"
 # Tell Antigen that you're done.
 antigen apply
 
+source ~/.aliases
+
 # show which alias to use when typing a long command
 YSU_MESSAGE_POSITION="after"
 YSU_HARDCORE=1
