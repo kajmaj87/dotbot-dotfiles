@@ -21,6 +21,7 @@
     ~/.environment: environment
     ~/.functions: functions
     ~/.gitconfig: gitconfig
+    ~/.ideavimrc: ideavimrc
     ~/.vim/vimrc:
         path: vim/vimrc
         create: true
