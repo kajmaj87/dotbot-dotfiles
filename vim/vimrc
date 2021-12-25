@@ -110,6 +110,7 @@ source ~/.config/vim/plugins/vim-undotree.vim
 " source ~/.config/vim/plugins/visual-multi.vim
 " source ~/.config/vim/plugins/visual-star-search.vim
 " source ~/.config/vim/plugins/which-key.vim
+source ~/.config/vim/plugins/vim-zettel.vim
 
 call plug#end()
 
