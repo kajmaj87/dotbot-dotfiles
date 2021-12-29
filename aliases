@@ -3,6 +3,7 @@ alias cargo='mold -run cargo'
 
 alias gp='git pull'
 alias gps='git push'
+alias gpsu='git push --set-upstream origin'
 alias gs='git status'
 alias ga='git add'
 alias gap='git add -p'
