@@ -1,3 +1,7 @@
+" those 3 lines are needed to read vanilla vim config correctly
+" https://vi.stackexchange.com/questions/12794/how-to-share-config-between-vim-and-neovim
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
 source ~/.vim/vimrc
 
 set undofile
@@ -37,5 +41,16 @@ call plug#end()
 source ~/.config/nvim/plugins/nvim-cmp.vim
 
 lua << EOF
-require'lspconfig'.hls.setup{}
+-- require'lspconfig'.hls.setup{}
+require'lspconfig'.ccls.setup{
+  init_options = {
+    compilationDatabaseDirectory = "build";
+    index = {
+      threads = 0;
+    };
+    clang = {
+      extraArgs = { "-std=c++20" }
+    };
+  }
+}
 EOF
