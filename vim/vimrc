@@ -44,6 +44,7 @@ endif
 "
 
 let mapleader = " "
+
 nmap <leader>ve :edit ~/.vim/vimrc<cr>
 nmap <leader>vr :w!<cr>:source ~/.vim/vimrc<cr>
 
