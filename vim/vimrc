@@ -1,5 +1,5 @@
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set tabstop=4
 set hidden
 set relativenumber
@@ -30,9 +30,12 @@ set noswapfile
 set updatetime=300 " Reduce time for highlighting other references
 set redrawtime=10000 " Allow more time for loading syntax on large files
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow " use ripgrep instead of grep inside of vim
+" automatically save after editing and read after file changed externally
+set autowrite
+set autoread
 
-" remember last edit position and restore it
 if has("autocmd")
+" remember last edit position and restore it
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
@@ -110,6 +113,7 @@ source ~/.config/vim/plugins/vim-undotree.vim
 " source ~/.config/vim/plugins/visual-multi.vim
 " source ~/.config/vim/plugins/visual-star-search.vim
 " source ~/.config/vim/plugins/which-key.vim
+source ~/.config/vim/plugins/vim-startify.vim
 source ~/.config/vim/plugins/vim-zettel.vim
 "source ~/.config/vim/plugins/vim-wiki.vim
 
