@@ -110,6 +110,7 @@ source ~/.config/vim/plugins/surround.vim
 " source ~/.config/vim/plugins/tmux-navigator.vim
 " source ~/.config/vim/plugins/unimpaired.vim
 " source ~/.config/vim/plugins/vim-test.vim
+source ~/.config/vim/plugins/vim-auto-save.vim
 source ~/.config/vim/plugins/vim-undotree.vim
 " source ~/.config/vim/plugins/visual-multi.vim
 " source ~/.config/vim/plugins/visual-star-search.vim
