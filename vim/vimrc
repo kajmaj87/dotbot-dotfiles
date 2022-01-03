@@ -24,6 +24,7 @@ set splitright
 set clipboard=unnamedplus
 set confirm
 set exrc
+set secure
 set backup
 set backupdir=~/.local/share/vim/backup//
 set noswapfile
