@@ -32,9 +32,8 @@ source ~/.aliases
 source ~/.environment
 source ~/.functions
 # used for env variables that are not shared in .dotfiles repo
-if [[ -f ~/.overrides ]]; then
-    source ~/.overrides
-fi
+[ -f ~/.overrides ] && source ~/.overrides
+
 # should be started after custom aliases are loaded
 antigen bundle "MichaelAquilina/zsh-you-should-use"
 
@@ -48,5 +47,6 @@ YSU_MESSAGE_POSITION="after"
 YSU_HARDCORE=1
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
