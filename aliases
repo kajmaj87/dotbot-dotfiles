@@ -13,6 +13,7 @@ alias gm='gp; git checkout -B master origin/master'
 alias gmm='git merge origin/master'
 alias gac='git add .; git commit -m'
 alias gcm='git commit -m'
+alias gc='git clone'
 
 alias ll='ls -lha'
 
