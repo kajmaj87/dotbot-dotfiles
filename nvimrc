@@ -27,32 +27,14 @@ call plug#begin(data_dir . '/plugins')
     Plug 'hrsh7th/cmp-vsnip'
     Plug 'hrsh7th/vim-vsnip'
 
-    " For luasnip users.
-    " Plug 'L3MON4D3/LuaSnip'
-    " Plug 'saadparwaiz1/cmp_luasnip'
 
-    " For ultisnips users.
-    " Plug 'SirVer/ultisnips'
-    " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+    source ~/.config/nvim/plugins/cpp.vim
 
-    " For snippy users.
-    " Plug 'dcampos/nvim-snippy'
-    " Plug 'dcampos/cmp-snippy'
 call plug#end()
 
 source ~/.config/nvim/plugins/nvim-cmp.vim
+luafile ~/.config/nvim/plugins/cpp.lua
 
 lua << EOF
--- require'lspconfig'.hls.setup{}
-require'lspconfig'.ccls.setup{
-  init_options = {
-    compilationDatabaseDirectory = "build";
-    index = {
-      threads = 0;
-    };
-    clang = {
-      extraArgs = { "-std=c++20" }
-    };
-  }
-}
+require'lspconfig'.hls.setup{}
 EOF
