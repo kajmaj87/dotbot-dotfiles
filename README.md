@@ -27,3 +27,4 @@ Vim/Neovim will fetch all needed plugins each time you open them (this will only
 - fzf
 - zsh with oh-my-zsh and powerlevel10k customized theme
 - vim + neovim with separate configs (neovim uses vim configs and builds upon them)
+- Vagrant file to test the dotfiles under a fresh linux install easily. Other way to test is to just create a new user under current distro.
