@@ -19,6 +19,8 @@ When you have some pending changes, then you will also be notifed after opening 
 
 Both updating and pulling is automated as far as possible to force me to keep dotfiles always up to date.
 
+Vim/Neovim will fetch all needed plugins each time you open them (this will only happen when there are some missing plugins)
+
 ## Notable contents
 
 - fasd (use z, v aliases to quickly change directories or edit files you already edited with vim)
