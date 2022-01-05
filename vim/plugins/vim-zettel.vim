@@ -11,7 +11,7 @@ let g:vimwiki_auto_chdir = 1
 " ensure .md on all files
 let g:vimwiki_markdown_link_ext = 1
 
-let g:zettel_options = [{"front_matter" : {"tags" : ""}, "template" :  "~/.vim/plugins/vim-zettel.tpl"}, {"front_matter" : {"tags" : ""}, "template" :  "~/.vim/plugins/vim-zettel.tpl"}]
+let g:zettel_options = [{"front_matter" : {"tags" : ""}, "template" :  "~/.config/vim/plugins/vim-zettel.tpl"}, {"front_matter" : {"tags" : ""}, "template" :  "~/.config/vim/plugins/vim-zettel.tpl"}]
 
 let g:zettel_format = "%y%m%d-%title"
 let g:zettel_date_format = "%d.%m.%y"
