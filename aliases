@@ -23,7 +23,7 @@ alias v='f -e vim'
 alias o='a -e xdg-open'
 
 # arch/manjaro
-alias up='sudo pacman-mirrors -f10; yay -Syu --noconfirm'
+alias up='sudo pacman-mirrors -c Germany,Ukraine,Poland; yay -Syu --noconfirm'
 
 # zsh related
 alias or='omz reload'
