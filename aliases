@@ -14,6 +14,7 @@ alias gmm='git merge origin/master'
 alias gac='git add .; git commit -m'
 alias gcm='git commit -m'
 alias gc='git clone'
+alias gpsu='git push --set-upstream origin $(git_current_branch)'
 
 alias ll='ls -lha'
 
@@ -22,7 +23,7 @@ alias v='f -e vim'
 alias o='a -e xdg-open'
 
 # arch/manjaro
-alias up='yay -Syu --noconfirm'
+alias up='sudo pacman-mirrors -f10; yay -Syu --noconfirm'
 
 # zsh related
 alias or='omz reload'
