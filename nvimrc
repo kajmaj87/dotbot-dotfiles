@@ -38,3 +38,4 @@ luafile ~/.config/nvim/plugins/cpp.lua
 lua << EOF
 require'lspconfig'.hls.setup{}
 EOF
+
