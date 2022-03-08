@@ -17,7 +17,8 @@
 
 - link:
     ~/.aliases: aliases
-    ~/bin/auto_update.sh: auto_update.sh
+    ~/bin/auto_update.sh: scripts/auto_update.sh
+    ~/bin/setup_network_for_wsl2.sh: scripts/setup_network_for_wsl2.sh
     ~/.environment: environment
     ~/.functions: functions
     ~/.gitconfig: gitconfig

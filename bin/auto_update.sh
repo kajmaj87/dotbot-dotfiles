@@ -1,1 +1,0 @@
-/home/kajman/.dotfiles/auto_update.sh
