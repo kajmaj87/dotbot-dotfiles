@@ -1,4 +1,5 @@
 alias af='alias | fzf'
+alias pf='ps aux | fzf'
 
 alias cargo='mold -run cargo'
 
