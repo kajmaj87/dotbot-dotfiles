@@ -1,6 +1,7 @@
 export RUSTC_WRAPPER=/home/kajman/.cargo/bin/sccache
 export EDITOR=vim
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export npm_config_prefix="$HOME/.local"
 
 if [[ -d "/run/WSL" ]] then
   echo "Running under WSL - changing network settings to avoid x apps disconnections"
