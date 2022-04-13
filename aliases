@@ -24,6 +24,9 @@ alias ll='ls -lha'
 alias v='f -e vim'
 alias o='a -e xdg-open'
 
+# fd - this is ubuntu specific
+alias fd=fdfind
+
 # arch/manjaro
 alias up='sudo pacman-mirrors -c Germany,Ukraine,Poland; yay -Syu --noconfirm'
 
