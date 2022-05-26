@@ -44,7 +44,8 @@ source ~/.aliases
 
 # show which alias to use when typing a long command
 YSU_MESSAGE_POSITION="after"
-YSU_HARDCORE=1
+# force usage of aliases:
+# YSU_HARDCORE=1
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
