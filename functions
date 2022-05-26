@@ -1,1 +1,6 @@
 eval "$(fasd --init auto)"
+
+# kill app running on given port
+killp () {
+  kill -9 $(lsof -t -i:$1)
+}
