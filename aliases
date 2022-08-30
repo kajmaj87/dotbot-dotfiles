@@ -1,7 +1,13 @@
 alias af='alias | fzf'
 alias pf='ps aux | fzf'
 
-alias cargo='mold -run cargo'
+if command -v mold &> /dev/null
+then
+    alias cargo='mold -run cargo'
+else
+    echo "Mold is not installed, rust compilations will be slower. Install https://github.com/rui314/mold"
+fi
+
 
 alias gp='git pull'
 alias gps='git push'
