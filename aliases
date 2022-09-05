@@ -23,15 +23,14 @@ alias gac='git add .; git commit -m'
 alias gcm='git commit -m'
 alias gc='git clone'
 alias gpsu='git push --set-upstream origin $(git_current_branch)'
+# I always forget this programs name
+alias record_gif='peek'
 
 alias ll='ls -lha'
 
 # fasd
 alias v='f -e vim'
 alias o='a -e xdg-open'
-
-# fd - this is ubuntu specific
-alias fd=fdfind
 
 # arch/manjaro
 alias up='sudo pacman-mirrors -c Germany,Ukraine,Poland; yay -Syu --noconfirm'
