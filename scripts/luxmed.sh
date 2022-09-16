@@ -16,6 +16,7 @@ while [ $response -eq 0 ]
 do
 
 raw_response=$(curl --compressed -s "$@")
+echo "$raw_response" > "$HOME/last_luxmed_response"
 
 [[ "$raw_response" =~ "Unauthorized" ]] && curl -s \
   --form-string "token=$PUSHOVER_TOKEN" \
@@ -26,7 +27,6 @@ raw_response=$(curl --compressed -s "$@")
 && exit 1
 
 response=$(echo "$raw_response" | jq '[.termsForService.termsInfoForDays[] | select(.message|contains("W tym dniu dostępne są terminy w innych")|not) | .termsCounter.termsNumber] | add')
-
 echo "$raw_response" | jq
 echo "Total visits: $response"
 
