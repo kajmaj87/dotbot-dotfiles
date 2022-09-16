@@ -34,6 +34,7 @@ echo "Total visits: $response"
   --form-string "token=$PUSHOVER_TOKEN" \
   --form-string "user=$PUSHOVER_USER" \
   --form-string "message=Wizyta jest dostepna!" \
+  --form-string "title=$title" \
   https://api.pushover.net/1/messages.json
 
 
