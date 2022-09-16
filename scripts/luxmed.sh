@@ -27,7 +27,7 @@ raw_response=$(curl --compressed -s "$@")
 
 response=$(echo "$raw_response" | jq '[.termsForService.termsInfoForDays[] | select(.message|contains("W tym dniu dostępne są terminy w innych")|not) | .termsCounter.termsNumber] | add')
 
-echo "$raw_response"
+echo "$raw_response" | jq
 echo "Total visits: $response"
 
 [[ "$response" -gt 0 ]] && curl -s \
