@@ -10,6 +10,7 @@
   - ~/projects
   - ~/.config/vim
   - ~/.config/nvim
+  - ~/.config/i3
   - ~/.local/share/nvim/backup
   - ~/.local/share/nvim/undo
   - ~/.local/share/vim/backup
@@ -36,6 +37,7 @@
     ~/.config/vim/after: vim/after
     ~/.config/nvim/plugins: nvim/plugins
     ~/.config/nvim/init.vim: nvimrc
+    ~/.config/i3/config: i3config
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [curl -L git.io/antigen > antigen.zsh]
