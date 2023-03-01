@@ -3,7 +3,7 @@
 Plug 'vimwiki/vimwiki'
 Plug 'michal-h21/vim-zettel'
 
-let g:vimwiki_list = [{"path":"~/org/vimbrain/", 'auto_tags': 1, 'auto_toc': 1},{"path":"~/org/vdc/", 'auto_tags': 1, 'auto_toc': 1}]
+let g:vimwiki_list = [{"path":"~/org/vimbrain/", 'auto_tags': 1, 'auto_toc': 1},{"path":"~/org/pat/", 'auto_tags': 1, 'auto_toc': 1},{"path":"~/org/vdc/", 'auto_tags': 1, 'auto_toc': 1}]
 
 let g:vimwiki_use_mouse = 1
 " let g:vimwiki_folding = 'expr'
