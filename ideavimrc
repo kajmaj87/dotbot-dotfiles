@@ -1,4 +1,5 @@
 inoremap jk <ESC>
+inoremap kj <ESC>
 set clipboard=unnamed
 set surround
 
