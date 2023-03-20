@@ -9,7 +9,6 @@
   - ~/tools
   - ~/projects
   - ~/.config/vim
-  - ~/.config/nvim
   - ~/.config/i3
   - ~/.local/share/nvim/backup
   - ~/.local/share/nvim/undo
@@ -36,7 +35,7 @@
     ~/.config/vim/plugins: vim/plugins
     ~/.config/vim/after: vim/after
     ~/.config/nvim: kickstart.nvim
-    ~/.config/nvim/lua/custom/plugins/init.lua: nvim_init.lua
+    ~/.config/nvim/lua/custom/plugins/custom.lua: nvim_init.lua
     ~/.config/i3/config: i3config
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

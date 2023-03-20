@@ -5,6 +5,8 @@
 [submodule "fasd"]
 	path = fasd
 	url = https://github.com/clvv/fasd
+	ignore = dirty
 [submodule "kickstart.nvim"]
 	path = kickstart.nvim
 	url = https://github.com/nvim-lua/kickstart.nvim
+	ignore = dirty
