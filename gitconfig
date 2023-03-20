@@ -1,3 +1,5 @@
 [user]
-	email = kajmaj87@gmail.com
-	name = kajman
+	email = maj@patronas.com
+	name = Kajetan Maj
+[commit]
+	template = /home/kajman/projects/.git_commit_msg.txt
