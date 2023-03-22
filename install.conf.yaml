@@ -37,6 +37,7 @@
     ~/.config/nvim: kickstart.nvim
     ~/.config/nvim/lua/custom/plugins/custom.lua: nvim_init.lua
     ~/.config/i3/config: i3config
+    ~/.config/copyq/copyq.conf: copyq.conf
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [curl -L git.io/antigen > antigen.zsh]
