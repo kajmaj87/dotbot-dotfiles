@@ -241,3 +241,4 @@ bindsym $mod+Delete mode "$mode_system"
 
 bindsym $mod+Shift+o exec "i3lock"
 bindsym $mod+Shift+s exec "systemctl suspend"
+bindsym $mod+Shift+u exec "dm-tool switch-to-greeter"
