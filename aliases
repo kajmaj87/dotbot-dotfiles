@@ -38,5 +38,8 @@ alias up='sudo pacman-mirrors -c Germany,Ukraine,Poland; yay -Syu --noconfirm'
 # zsh related
 alias or='omz reload'
 
+# copy given file to clipboard
+alias c='xclip -sel c < '
+
 
 alias r4bi='ssh pi@193.239.58.220 -p 27843'
