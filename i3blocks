@@ -1,0 +1,90 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+# Global properties
+# separator_block_width=15
+# markup=none
+# interval=5
+[no-task]
+command=[ $(timew get dom.active) -eq 0 ] && echo "   NO TASK!   "
+separator=true
+interval=1
+background=#FF0000
+[task]
+command=echo "Current Task: $(timew summary | tail -4 | head -1 | sed 's/^[ \t]*//')"
+separator=true
+interval=1
+
+[documentation]
+full_text=Documentation
+website=https://vivien.github.io/i3blocks
+command=xdg-open "$website"
+color=#f12711
+
+[greetings]
+color=#f5af19
+command=echo "Hello, $USER!"
+interval=once
+
+[updates]
+command=[ $(cat /tmp/updates | tail -n +3 | wc -l) -gt 0 ] && echo "Pending $(cat /tmp/updates | tail -n +3 | wc -l) package updates."
+separator=true
+interval=60
+
+# Memory
+[memory]
+label=💾 
+command=free -h | awk 'NR==2 {printf "u: %s f: %s\n", $3, $7}'
+interval=5
+instance=memory
+separator=true
+
+# Load average
+[load_average]
+label=⚖ 
+command=cat /proc/loadavg | awk '{ print $1 }'
+interval=5
+separator=true
+
+# Disk space
+[disk_space]
+label=📁
+command=df -h / | awk 'NR==2 {printf "u: %s f: %s\n", $3, $4}'
+interval=60
+separator=true
+
+# Battery
+[battery]
+label=🔋
+command=acpi -i | awk -F'[,:%]' 'NR==2 {print $2, $3"%", $5 "h" $6 "m"}'
+interval=30
+separator=true
+
+# Ethernet
+# [ethernet]
+# label=🌐
+# instance=eth0
+# command=/usr/lib/i3blocks/iface
+# interval=5
+# separator=true
+
+# Wireless
+[wireless]
+label=📶 
+# instance=wlan0
+# command=/usr/lib/i3blocks/iface
+command=ip addr show dev wlp0s20f3 | awk '/inet / {print $2}' || echo "down"
+interval=5
+separator=true
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
