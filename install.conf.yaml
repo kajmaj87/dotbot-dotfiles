@@ -10,6 +10,7 @@
   - ~/projects
   - ~/.config/vim
   - ~/.config/i3
+  - ~/.config/i3blocks
   - ~/.local/share/nvim/backup
   - ~/.local/share/nvim/undo
   - ~/.local/share/vim/backup
