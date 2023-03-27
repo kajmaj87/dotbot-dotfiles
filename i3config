@@ -239,6 +239,6 @@ mode "$mode_system" {
 }
 bindsym $mod+Delete mode "$mode_system"
 
-bindsym $mod+Shift+o exec "i3lock"
-bindsym $mod+Shift+s exec "systemctl suspend"
-bindsym $mod+Shift+u exec "dm-tool switch-to-greeter"
+bindsym $mod+Shift+o exec "sudo -k && i3lock"
+bindsym $mod+Shift+s exec "sudo -k && systemctl suspend"
+bindsym $mod+Shift+u exec "sudo -k && dm-tool switch-to-greeter"

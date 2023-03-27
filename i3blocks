@@ -13,6 +13,10 @@ separator_block_width=15
 # separator_block_width=15
 # markup=none
 # interval=5
+[updates]
+command=dnf --cacheonly --quiet --refresh updateinfo | awk 'BEGIN {s=0} { s+=$1 } END { if (s>0) print "Package Updates:",s}'
+interval=60
+separator=true
 [no-task]
 command=[ $(timew get dom.active) -eq 0 ] && echo "   NO TASK!   "
 separator=true
