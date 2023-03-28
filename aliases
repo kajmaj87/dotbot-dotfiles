@@ -38,6 +38,11 @@ alias up='sudo pacman-mirrors -c Germany,Ukraine,Poland; yay -Syu --noconfirm'
 # zsh related
 alias or='omz reload'
 
+# timewarrior
+alias tc='timew continue'
+alias ts='timew summary'
+alias tS='timew stop'
+
 # copy given file to clipboard
 alias c='xclip -sel c < '
 
