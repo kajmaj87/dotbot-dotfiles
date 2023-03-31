@@ -40,7 +40,7 @@ alias or='omz reload'
 
 # timewarrior
 alias tc='timew continue'
-alias ts='timew summary'
+alias ts='timew summary :id'
 alias tS='timew stop'
 
 # copy given file to clipboard

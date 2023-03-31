@@ -13,8 +13,23 @@ separator_block_width=15
 # separator_block_width=15
 # markup=none
 # interval=5
+[notifications_tag]
+full_text="Notifications:"
+command=dunstctl history-pop
+separator=false
+[notifications_count]
+command=dunstctl count history
+interval=1
+separator=false
+[notifications_clear]
+full_text=[X]
+command=dunstctl history-clear
+[update_button]
+full_text=Package Updates:
+command=i3-sensible-terminal -e 'sudo /usr/bin/dnf update && read'
+separator=false
 [updates]
-command=dnf --cacheonly --quiet --refresh updateinfo | awk 'BEGIN {s=0} { s+=$1 } END { if (s>0) print "Package Updates:",s}'
+command=dnf --cacheonly --quiet --refresh updateinfo | grep -v Bugfix | awk 'BEGIN {s=0} { s+=$1 } END { print s}'
 interval=60
 separator=true
 [no-task]
