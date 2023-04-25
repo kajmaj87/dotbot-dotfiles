@@ -13,6 +13,9 @@ separator_block_width=15
 # separator_block_width=15
 # markup=none
 # interval=5
+[spotify]
+command=$HOME/.config/i3blocks/spotify_track.sh
+interval=5
 [notifications_tag]
 full_text="Notifications:"
 command=dunstctl history-pop
@@ -23,13 +26,13 @@ interval=1
 separator=false
 [notifications_clear]
 full_text=[X]
-command=dunstctl history-clear
+command=dunstctl close-all && dunstctl history-clear
 [update_button]
 full_text=Package Updates:
-command=i3-sensible-terminal -e 'sudo /usr/bin/dnf update && read'
+command=i3-sensible-terminal -e 'sudo /usr/bin/dnf update && read && sudo /usr/bin/truncate -s 0 /etc/motd'
 separator=false
 [updates]
-command=dnf --cacheonly --quiet --refresh updateinfo | grep -v Bugfix | awk 'BEGIN {s=0} { s+=$1 } END { print s}'
+command=tail -2 /etc/motd | awk 'BEGIN { s=0 } { s+=$2 } END {print s}'
 interval=60
 separator=true
 [no-task]
@@ -83,7 +86,7 @@ separator=true
 # Battery
 [battery]
 label=🔋
-command=acpi -i | awk -F'[,:%]' 'NR==2 {print $2, $3"%", $5 "h" $6 "m"}'
+command=acpi -b | head -1 | cut --complement -c 1-11
 interval=30
 separator=true
 

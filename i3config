@@ -36,6 +36,7 @@ exec --no-startup-id nm-applet
 
 # MY APPLICATIONS
 exec --no-startup-id copyq
+exec --no-startup-id autorandr --change
 exec setxkbmap -option 'grp:alt_shift_toggle' -layout pl,de
 
 # Use pactl to adjust volume in PulseAudio.
@@ -161,7 +162,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 assign [class="jetbrains-idea"] $ws3
 assign [class="Opus"] $ws4
 # assign [icon-name="Opus2"] $ws4
-assign [class="firefox"] $ws5
+# assign [class="firefox"] $ws5
 assign [class="Google-chrome"] $ws9 
 
 # reload the configuration file
@@ -242,3 +243,6 @@ bindsym $mod+Delete mode "$mode_system"
 bindsym $mod+Shift+o exec "sudo -k && timew stop; i3lock --nofork && timew continue"
 bindsym $mod+Shift+s exec "sudo -k && timew stop; systemctl suspend"
 bindsym $mod+Shift+u exec "sudo -k && timew stop; dm-tool switch-to-greeter"
+
+# pause/unpause current spotify song
+bindsym $mod+p exec "$HOME/bin/spotify_start_stop.sh"
