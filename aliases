@@ -44,6 +44,7 @@ alias tc='timew continue'
 alias ts='timew summary :id'
 alias tS='timew stop'
 alias tm='timew month'
+alias tw='ts :week'
 
 # copy given file to clipboard
 alias c='xclip -sel c < '
