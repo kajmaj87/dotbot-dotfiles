@@ -39,6 +39,8 @@
     ~/.config/nvim/lua/custom/plugins/custom.lua: nvim_init.lua
     ~/.config/i3/config: i3config
     ~/.config/i3blocks/config: i3blocks
+    ~/.config/i3blocks/spotify_track.sh: scripts/spotify_track.sh
+    ~/.config/i3blocks/loadavg.sh: scripts/loadavg.sh
     ~/.config/copyq/copyq.conf: copyq.conf
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

@@ -72,9 +72,10 @@ separator=true
 # Load average
 [load_average]
 label=⚖ 
-command=cat /proc/loadavg | awk '{ print $1 }'
+command=$HOME/.config/i3blocks/loadavg.sh
 interval=5
 separator=true
+markup=pango
 
 # Disk space
 [disk_space]
@@ -86,7 +87,7 @@ separator=true
 # Battery
 [battery]
 label=🔋
-command=acpi -b | head -1 | cut --complement -c 1-11
+command=acpi -b | grep -v "rate information" | cut --complement -c 1-11
 interval=30
 separator=true
 

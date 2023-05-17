@@ -1,3 +1,5 @@
+Plug 'tpope/vim-surround'
+
 inoremap jk <ESC>
 inoremap kj <ESC>
 set clipboard=unnamed

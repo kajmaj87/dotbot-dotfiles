@@ -30,7 +30,7 @@ alias ll='ls -lha'
 
 # fasd
 alias v='f -e vim'
-alias o='a -e xdg-open'
+alias o='xdg-open'
 
 # arch/manjaro
 alias up='sudo pacman-mirrors -c Germany,Ukraine,Poland; yay -Syu --noconfirm'
@@ -44,7 +44,9 @@ alias tc='timew continue'
 alias ts='timew summary :id'
 alias tS='timew stop'
 alias tm='timew month'
+alias tlm='ts :lastmonth'
 alias tw='ts :week'
+alias tlw='ts :lastweek'
 
 # copy given file to clipboard
 alias c='xclip -sel c < '
