@@ -28,7 +28,7 @@ separator=false
 full_text=[X]
 command=dunstctl close-all && dunstctl history-clear
 [update_button]
-full_text=Package Updates:
+full_text=Updates:
 command=i3-sensible-terminal -e 'sudo /usr/bin/dnf update && read && sudo /usr/bin/truncate -s 0 /etc/motd'
 separator=false
 [updates]
@@ -45,15 +45,9 @@ command=echo "Current Task: $(timew summary | tail -4 | head -1 | sed 's/^[ \t]*
 separator=true
 interval=1
 
-[documentation]
-full_text=Documentation
-website=https://vivien.github.io/i3blocks
-command=xdg-open "$website"
-color=#f12711
-
 [greetings]
 color=#f5af19
-command=echo "Hello, $USER!"
+command=echo "u: $USER"
 interval=once
 
 [updates]

@@ -1,13 +1,38 @@
 Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
 
 inoremap jk <ESC>
 inoremap kj <ESC>
-set clipboard=unnamed
+set clipboard=unnamedplus
 set surround
+set easymotion
 
 let mapleader = " "
 
 nnoremap gn :action GotoNextError<CR>
 nnoremap gp :action GotoPreviousError<CR>
+
+map <leader>s <Plug>(easymotion-s)
+map <leader>f <Plug>(easymotion-f)
+map <leader>w <Plug>(easymotion-w)
+map <leader>b <Plug>(easymotion-b)
+
+" to find actions lookup Track action Ids from double shift menu
+
+map <leader>d <Action>(Debug)
+map <leader>r <Action>(RunClass)
+map <leader><leader>r <Action>(Run)
+map <leader>c <Action>(Stop)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <S-Space> <Action>(GotoNextError)
+
+" Reformat the current line only
+map <leader>l V<Action>(ReformatCode)
+
+map <leader><leader>b <Action>(ToggleLineBreakpoint)
+map <leader>o <Action>(FileStructurePopup)
 
 set scrolloff=5

@@ -160,6 +160,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # application assignments
 assign [class="jetbrains-idea"] $ws3
+for_window [class="^jetbrains-idea$"] layout tabbed
+
 assign [class="Opus"] $ws4
 # assign [icon-name="Opus2"] $ws4
 # assign [class="firefox"] $ws5
