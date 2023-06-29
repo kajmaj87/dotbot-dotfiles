@@ -9,10 +9,10 @@ cd "$DOTFILES" || exit
 
 git remote update
 
-# Were are we locally
+# Where are we locally
 LAST_UPDATE=$(git show --no-notes --format=format:"%H" $BRANCH | head -n 1)
 
-# Were are we remote
+# Where are we remote
 LAST_COMMIT=$(git show --no-notes --format=format:"%H" origin/$BRANCH | head -n 1)
 
 # IF we don't match we should update local
