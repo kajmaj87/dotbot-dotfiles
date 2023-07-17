@@ -11,6 +11,7 @@
   - ~/.config/vim
   - ~/.config/i3
   - ~/.config/i3blocks
+  - ~/.config/systemd/user/default.target.wants
   - ~/.local/share/nvim/backup
   - ~/.local/share/nvim/undo
   - ~/.local/share/vim/backup
@@ -44,6 +45,7 @@
     ~/.config/i3blocks/low_battery_warning_i3.sh: scripts/low_battery_warning_i3.sh
     ~/.config/i3blocks/cheat_timew_time.sh: scripts/cheat_timew_time.sh
     ~/.config/copyq/copyq.conf: copyq.conf
+    ~/.config/systemd/user/default.target.wants/syncthing.service: syncthing.service 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [curl -L git.io/antigen > antigen.zsh]
