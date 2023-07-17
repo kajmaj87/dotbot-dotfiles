@@ -41,6 +41,8 @@
     ~/.config/i3blocks/config: i3blocks
     ~/.config/i3blocks/spotify_track.sh: scripts/spotify_track.sh
     ~/.config/i3blocks/loadavg.sh: scripts/loadavg.sh
+    ~/.config/i3blocks/low_battery_warning_i3.sh: scripts/low_battery_warning_i3.sh
+    ~/.config/i3blocks/cheat_timew_time.sh: scripts/cheat_timew_time.sh
     ~/.config/copyq/copyq.conf: copyq.conf
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

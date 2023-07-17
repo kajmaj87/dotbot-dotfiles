@@ -1,6 +1,24 @@
 eval "$(fasd --init auto)"
 
 # kill app running on given port
-killp () {
-  kill -9 $(lsof -t -i:$1)
+# killp () {
+#   kill -15 $(lsof -t -i:$1) || kill -9 $(lsof -t -i:$1)
+# }
+
+killp() {
+    pid=$(lsof -t -i:$1)
+    if [ -z "$pid" ]
+    then
+        echo "No process is using port $1"
+        return 1
+    fi
+
+    kill -15 $pid
+    if [ $? -eq 0 ]
+    then
+        echo "Process was killed gracefully with SIGTERM"
+    else
+        kill -9 $pid
+        echo "Process was killed forcefully with SIGKILL"
+    fi
 }

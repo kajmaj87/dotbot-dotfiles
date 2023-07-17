@@ -13,23 +13,16 @@ separator_block_width=15
 # separator_block_width=15
 # markup=none
 # interval=5
+[greetings]
+color=#f5af19
+command=echo "u: $USER"
+interval=once
 [spotify]
 command=$HOME/.config/i3blocks/spotify_track.sh
 interval=5
-[notifications_tag]
-full_text="Notifications:"
-command=dunstctl history-pop
-separator=false
-[notifications_count]
-command=dunstctl count history
-interval=1
-separator=false
-[notifications_clear]
-full_text=[X]
-command=dunstctl close-all && dunstctl history-clear
 [update_button]
 full_text=Updates:
-command=i3-sensible-terminal -e 'sudo /usr/bin/dnf update && read && sudo /usr/bin/truncate -s 0 /etc/motd'
+command=i3-sensible-terminal -e 'sudo /usr/bin/dnf update && read; sudo /usr/bin/truncate -s 0 /etc/motd'
 separator=false
 [updates]
 command=tail -2 /etc/motd | awk 'BEGIN { s=0 } { s+=$2 } END {print s}'
@@ -41,19 +34,20 @@ separator=true
 interval=1
 background=#FF0000
 [task]
-command=echo "Current Task: $(timew summary | tail -4 | head -1 | sed 's/^[ \t]*//')"
+command=echo "Current Task: $(~/.config/i3blocks/cheat_timew_time.sh 0.94)"
 separator=true
 interval=1
-
-[greetings]
-color=#f5af19
-command=echo "u: $USER"
-interval=once
-
-[updates]
-command=[ $(cat /tmp/updates | tail -n +3 | wc -l) -gt 0 ] && echo "Pending $(cat /tmp/updates | tail -n +3 | wc -l) package updates."
-separator=true
-interval=60
+[notifications_tag]
+full_text="Notifications:"
+command=dunstctl history-pop
+separator=false
+[notifications_count]
+command=dunstctl count history
+interval=1
+separator=false
+[notifications_clear]
+full_text=[X]
+command=dunstctl close-all && dunstctl history-clear
 
 # Memory
 [memory]
@@ -84,6 +78,9 @@ label=🔋
 command=acpi -b | grep -v "rate information" | cut --complement -c 1-11
 interval=30
 separator=true
+[battery_warning]
+command=$HOME/.config/i3blocks/low_battery_warning_i3.sh > /dev/null
+interval=60
 
 # Ethernet
 # [ethernet]
@@ -105,3 +102,6 @@ separator=true
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=1
+[weather]
+command=echo $(curl -s 'wttr.in/?format=1')
+interval=600
