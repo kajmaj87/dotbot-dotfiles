@@ -165,8 +165,8 @@ assign [class="jetbrains-idea"] $ws3
 for_window [class="^jetbrains-idea$"] layout tabbed
 
 assign [class="Opus"] $ws4
-# assign [icon-name="Opus2"] $ws4
-# assign [class="firefox"] $ws5
+# assign [icon-name="Opus1"] $ws4
+assign [class="spotify"] $ws6
 assign [class="Google-chrome"] $ws9 
 
 # reload the configuration file

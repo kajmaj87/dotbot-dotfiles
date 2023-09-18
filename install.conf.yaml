@@ -22,6 +22,7 @@
     ~/bin/auto_update.sh: scripts/auto_update.sh
     ~/bin/setup_network_for_wsl2.sh: scripts/setup_network_for_wsl2.sh
     ~/bin/luxmed.sh: scripts/luxmed.sh
+    ~/bin/kb: scripts/kb.py
     ~/.environment: environment
     ~/.functions: functions
     ~/.gitconfig: gitconfig

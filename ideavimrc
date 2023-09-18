@@ -3,7 +3,7 @@ Plug 'easymotion/vim-easymotion'
 
 inoremap jk <ESC>
 inoremap kj <ESC>
-set clipboard=unnamedplus
+set clipboard=unnamed
 set surround
 set easymotion
 
