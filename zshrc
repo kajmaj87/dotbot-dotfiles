@@ -3,6 +3,12 @@
 
 source ~/.environment
 
+[[ -f ~/Git/zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
+
+source ~/Git/zsh-snap/znap.zsh 
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -11,11 +17,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source ~/.dotfiles/antigen.zsh
-
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
+# antigen bundle zsh-users/zsh-completions
+# antigen bundle docker/cli
+# antigen bundle docker/compose
+# znap source marlonrichert/zsh-autocomplete
 antigen bundle git
 antigen bundle battery
 antigen bundle python

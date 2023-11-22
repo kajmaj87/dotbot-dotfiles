@@ -37,6 +37,10 @@ background=#FF0000
 command=echo "Current Task: $(~/.config/i3blocks/cheat_timew_time.sh 0.94)"
 separator=true
 interval=1
+[missing_hours]
+command=echo "D: $(~/bin/missing_hours.sh)"
+separator=true
+interval=1
 [notifications_tag]
 full_text="Notifications:"
 command=dunstctl history-pop

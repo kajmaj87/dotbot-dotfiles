@@ -52,6 +52,7 @@ alias tw='ts :week'
 alias twe='tw | ~/bin/time_summary.py | ~/bin/timesheet_to_excel.py'
 alias tlw='ts :lastweek'
 alias tlwe='tlw | ~/bin/time_summary.py | ~/bin/timesheet_to_excel.py'
+alias missing_hours="tme | ~/bin/calculate_missing_hours.py | awk '{print \$1}'"
 
 # copy given file to clipboard
 alias c='xclip -sel c < '
