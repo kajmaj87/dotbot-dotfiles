@@ -64,7 +64,11 @@ def extract_kibana_links(html_content):
     kibana_dict = {}
     for match in row_matches:
         system_name, kibana_link = match
-        kibana_dict[system_name] = kibana_link
+     # Regex pattern to find and replace the refresh interval part of the URL
+        refresh_interval_pattern = r'refreshInterval:\(pause:!t,value:0\)'
+        new_refresh_interval = 'refreshInterval:(pause:!f,value:5000)'
+        modified_link = re.sub(refresh_interval_pattern, new_refresh_interval, kibana_link)
+        kibana_dict[system_name] = modified_link
     return kibana_dict
 
 # Main crawling function
