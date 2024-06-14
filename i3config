@@ -245,7 +245,8 @@ mode "$mode_system" {
 }
 bindsym $mod+Delete mode "$mode_system"
 
-bindsym $mod+Shift+o exec "sudo -k && timew stop; i3lock --nofork && timew continue"
+bindsym $mod+Shift+o exec "sudo -k && i3lock --nofork"
+# bindsym $mod+Shift+o exec "sudo -k && timew stop; i3lock --nofork && timew continue"
 bindsym $mod+Shift+s exec "sudo -k && timew stop; systemctl suspend"
 bindsym $mod+Shift+u exec "sudo -k && timew stop; dm-tool switch-to-greeter"
 

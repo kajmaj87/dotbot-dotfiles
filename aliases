@@ -8,6 +8,8 @@ else
     echo "Mold is not installed, rust compilations will be slower. Install https://github.com/rui314/mold"
 fi
 
+alias br='reload_bluetooth_module'
+
 
 alias gp='git pull'
 alias gps='git push'
@@ -18,7 +20,9 @@ alias gap='git add -p'
 alias gd='git diff'
 alias gr='git checkout -- .'
 alias gm='gp; git checkout -B master origin/master'
-alias gmm='git merge origin/master'
+alias gmom='git merge origin/master'
+alias gmod='git merge origin/develop'
+alias gcod='gco develop'
 alias gac='git add .; git commit -m'
 alias gcm='git commit -m'
 alias gc='git clone'

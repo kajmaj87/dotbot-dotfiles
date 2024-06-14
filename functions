@@ -1,24 +1,67 @@
 eval "$(fasd --init auto)"
 
-# kill app running on given port
-# killp () {
-#   kill -15 $(lsof -t -i:$1) || kill -9 $(lsof -t -i:$1)
-# }
+#killp() {
+#    pid=$(lsof -t -i:$1)
+#    if [ -z "$pid" ]; then
+#        echo "No process is using port $1"
+#        return 1
+#    fi
+#
+#    kill -15 $pid  # send SIGTERM
+#    echo "Sent SIGTERM to process $pid, waiting for it to exit..."
+#    sleep 5  # wait for 5 seconds
+#
+#    # Check if the process is still running
+#    if kill -0 $pid 2>/dev/null; then
+#        echo "Process did not terminate, sending SIGKILL..."
+#        kill -9 $pid
+#        echo "Process was killed forcefully with SIGKILL"
+#    else
+#        echo "Process was killed gracefully with SIGTERM"
+#    fi
+#}
 
 killp() {
     pid=$(lsof -t -i:$1)
-    if [ -z "$pid" ]
-    then
+    if [ -z "$pid" ]; then
         echo "No process is using port $1"
         return 1
     fi
 
-    kill -15 $pid
-    if [ $? -eq 0 ]
-    then
-        echo "Process was killed gracefully with SIGTERM"
-    else
+    kill -15 $pid  # send SIGTERM
+    echo -n "Sent SIGTERM to process $pid, waiting for it to exit"
+
+    # Wait for up to 5 seconds, checking each second
+    for i in {1..10}; do
+        if ! kill -0 $pid 2>/dev/null; then
+            echo -e "\nProcess exited gracefully within $i second(s)."
+            return 0
+        fi
+        echo -n "."
+        sleep 1
+    done
+    echo ""
+
+    # Check if the process is still running after 5 seconds
+    if kill -0 $pid 2>/dev/null; then
+        echo "Process did not terminate within 5 seconds, sending SIGKILL..."
         kill -9 $pid
         echo "Process was killed forcefully with SIGKILL"
+    else
+        echo "Process was killed gracefully with SIGTERM"
     fi
+}
+
+reload_bluetooth_module() {
+    echo "Unloading Bluetooth module..."
+    sudo modprobe -r btusb
+    echo "Bluetooth module unloaded."
+
+    echo "Restarting Bluetooth service..."
+    sudo systemctl restart bluetooth
+    echo "Bluetooth service restarted."
+
+    echo "Reloading Bluetooth module..."
+    sudo modprobe btusb
+    echo "Bluetooth module reloaded."
 }
