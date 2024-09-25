@@ -64,3 +64,4 @@
     description: Change shell to zsh if not already (do not check on WSL as it does not work)
     quiet: false
   - ["cd fasd; PREFIX=$HOME make install", Installing fasd]
+  - [distrobox assemble create -R --file $HOME/.distrobox/distrobox.ini]
