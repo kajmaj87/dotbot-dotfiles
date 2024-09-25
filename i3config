@@ -36,7 +36,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # MY APPLICATIONS
-exec --no-startup-id copyq
+exec --no-startup-id flatpak run com.github.hluk.copyq
 exec --no-startup-id autorandr --change
 exec --no-startup-id numlockx on
 exec setxkbmap -option 'grp:alt_shift_toggle' -layout pl,de
@@ -48,17 +48,26 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+bindsym XF86MonBrightnessUp exec brightnessctl -e set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl -e set 5%-
+
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty --hold distrobox enter --name base -- zsh
+bindsym $mod+q      exec kitty --hold distrobox enter --name base -- zsh
+bindsym $mod+b      exec kitty --hold distrobox enter --name base -- zsh
+bindsym $mod+n      exec kitty --hold distrobox enter --name base -- zsh
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+d kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'"
+# bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'"
+bindsym $mod+r exec rofi -show drun
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -66,10 +75,10 @@ bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -78,10 +87,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -90,14 +99,15 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # move whole workspace
-bindsym $mod+Ctrl+h move workspace to output left
-bindsym $mod+Ctrl+l move workspace to output right
-
-bindsym $mod+Ctrl+Left move workspace to output left
-bindsym $mod+Ctrl+Right move workspace to output right
+# bindsym $mod+Ctrl+h move workspace to output left
+# bindsym $mod+Ctrl+l move workspace to output right
+# 
+# bindsym $mod+Ctrl+Left move workspace to output left
+# bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+m move workspace to output right
 
 # split in horizontal orientation
-bindsym $mod+semicolon split h
+bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -177,7 +187,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize", exec i3-nagbar -m 'Resizing mode activated' -t warning
+bindsym $mod+Ctrl+r mode "resize", exec i3-nagbar -m 'Resizing mode activated' -t warning
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -185,10 +195,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -200,6 +210,7 @@ mode "resize" {
         bindsym Return mode "default", exec killall i3-nagbar
         bindsym Escape mode "default", exec killall i3-nagbar
         bindsym $mod+r mode "default", exec killall i3-nagbar
+        bindsym $mod+Ctrl+r mode "default", exec killall i3-nagbar
 }
 
 

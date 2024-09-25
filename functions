@@ -1,26 +1,5 @@
 eval "$(fasd --init auto)"
 
-#killp() {
-#    pid=$(lsof -t -i:$1)
-#    if [ -z "$pid" ]; then
-#        echo "No process is using port $1"
-#        return 1
-#    fi
-#
-#    kill -15 $pid  # send SIGTERM
-#    echo "Sent SIGTERM to process $pid, waiting for it to exit..."
-#    sleep 5  # wait for 5 seconds
-#
-#    # Check if the process is still running
-#    if kill -0 $pid 2>/dev/null; then
-#        echo "Process did not terminate, sending SIGKILL..."
-#        kill -9 $pid
-#        echo "Process was killed forcefully with SIGKILL"
-#    else
-#        echo "Process was killed gracefully with SIGTERM"
-#    fi
-#}
-
 killp() {
     pid=$(lsof -t -i:$1)
     if [ -z "$pid" ]; then
@@ -64,4 +43,8 @@ reload_bluetooth_module() {
     echo "Reloading Bluetooth module..."
     sudo modprobe btusb
     echo "Bluetooth module reloaded."
+}
+
+function h() {
+    distrobox-host-exec "$@"
 }

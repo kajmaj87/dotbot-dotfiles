@@ -36,3 +36,4 @@ map <leader><leader>b <Action>(ToggleLineBreakpoint)
 map <leader>o <Action>(FileStructurePopup)
 
 set scrolloff=5
+set clipboard^=ideaput
