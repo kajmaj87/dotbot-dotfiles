@@ -8,6 +8,7 @@
   - ~/.config/copyq
   - ~/.config/i3
   - ~/.config/i3blocks
+  - ~/.config/nvim/lua/custom/plugins
   - ~/.config/systemd/user/default.target.wants
   - ~/.config/vim
   - ~/.distrobox
