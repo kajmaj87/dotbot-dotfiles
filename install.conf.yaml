@@ -56,12 +56,5 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [curl -L git.io/antigen > antigen.zsh]
-  - 
-    command: '[[ $(grep Microsoft /proc/version) ]] || (! [[ $SHELL =~ "zsh" ]] && chsh -s $(which zsh)) || true '
-    stdin: true
-    stdout: true
-    stderr: true
-    description: Change shell to zsh if not already (do not check on WSL as it does not work)
-    quiet: false
-  - ["cd fasd; PREFIX=$HOME make install", Installing fasd]
   - [distrobox assemble create -R --file $HOME/.distrobox/distrobox.ini]
+  - ["cd fasd; PREFIX=$HOME distrobox enter -n base -e make install", Installing fasd]
