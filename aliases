@@ -33,6 +33,7 @@ alias record_gif='peek'
 alias ll='ls -lha'
 
 # fasd
+alias vim=/usr/bin/nvim
 alias v='f -e vim'
 alias o='xdg-open'
 
@@ -52,6 +53,7 @@ alias tm='ts :month'
 alias tme='tm | ~/bin/time_summary.py | ~/bin/timesheet_to_excel.py'
 alias tlm='ts :lastmonth'
 alias tlme='tlm | ~/bin/time_summary.py | ~/bin/timesheet_to_excel.py'
+alias tlmec='tlme --raw | xclip -selection primary; echo "Copied to clipboard, paste into excel file"'
 alias tw='ts :week'
 alias twe='tw | ~/bin/time_summary.py | ~/bin/timesheet_to_excel.py'
 alias tlw='ts :lastweek'
@@ -61,5 +63,11 @@ alias missing_hours="tme | ~/bin/calculate_missing_hours.py | awk '{print \$1}'"
 # copy given file to clipboard
 alias c='xclip -sel c < '
 
+# emacs using emacs server daemon
+alias emacs="emacsclient -c -a 'emacs'"
+# fix problems with terminals on remote when using alacritty/kitty
+alias ssh="TERM=xterm-256color ssh"
+
 
 alias r4bi='ssh pi@193.239.58.220 -p 27843'
+alias wezterm='flatpak run org.wezfurlong.wezterm'

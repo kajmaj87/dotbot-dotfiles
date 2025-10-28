@@ -37,9 +37,15 @@ exec --no-startup-id nm-applet
 
 # MY APPLICATIONS
 exec --no-startup-id flatpak run com.github.hluk.copyq
+exec --no-startup-id flatpak run com.spotify.Client
+exec --no-startup-id flatpak run com.google.Chrome
+exec --no-startup-id flatpak run org.mozilla.firefox
+exec --no-startup-id distrobox enter base -- IT_OPUS_DEBUG_PORT=12000 IT_OPUS_HTTP_PORT=8082 IT_DB_PORT=3136 /home/kajman/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea
 exec --no-startup-id autorandr --change
+exec --no-startup-id distrobox enter base -- /usr/bin/emacs --daemon
 exec --no-startup-id numlockx on
-exec setxkbmap -option 'grp:alt_shift_toggle' -layout pl,de
+exec --no-startup-id feh --bg-fill $HOME/Downloads/PerseidsRadiant_Marcin_5500.jpg
+#exec setxkbmap -option 'grp:alt_shift_toggle' -layout pl,de
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -47,6 +53,14 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Volume control with Meta+mousewheel
+bindsym --whole-window Mod4+button4 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --whole-window Mod4+button5 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# Mute microphone with Meta+mousewheel click
+bindsym --whole-window Mod4+button2 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
 
 bindsym XF86MonBrightnessUp exec brightnessctl -e set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl -e set 5%-
@@ -57,10 +71,10 @@ bindsym XF86MonBrightnessDown exec brightnessctl -e set 5%-
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty --hold distrobox enter --name base -- zsh
-bindsym $mod+q      exec kitty --hold distrobox enter --name base -- zsh
-bindsym $mod+b      exec kitty --hold distrobox enter --name base -- zsh
-bindsym $mod+n      exec kitty --hold distrobox enter --name base -- zsh
+bindsym $mod+Return exec flatpak run org.wezfurlong.wezterm -e distrobox enter --name base -- zsh
+bindsym $mod+q exec flatpak run org.wezfurlong.wezterm
+bindsym $mod+b exec flatpak run org.wezfurlong.wezterm -e distrobox enter --name base -- zsh
+bindsym $mod+n exec flatpak run org.wezfurlong.wezterm -e distrobox enter --name base -- zsh
 
 # kill focused window
 bindsym $mod+d kill
@@ -75,10 +89,10 @@ bindsym $mod+r exec rofi -show drun
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -87,10 +101,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -107,7 +121,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+m move workspace to output right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+semicolon split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -174,9 +188,9 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 assign [class="jetbrains-idea"] $ws3
 for_window [class="^jetbrains-idea$"] layout tabbed
 
+assign [class="firefox"] $ws1
 assign [class="Opus"] $ws4
-# assign [icon-name="Opus1"] $ws4
-assign [class="spotify"] $ws6
+assign [class="Spotify"] $ws6
 assign [class="Google-chrome"] $ws9 
 
 # reload the configuration file
@@ -195,10 +209,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -258,7 +272,7 @@ bindsym $mod+Delete mode "$mode_system"
 
 bindsym $mod+Shift+o exec "sudo -k && i3lock --nofork"
 # bindsym $mod+Shift+o exec "sudo -k && timew stop; i3lock --nofork && timew continue"
-bindsym $mod+Shift+s exec "sudo -k && timew stop; systemctl suspend"
+bindsym $mod+Shift+Ctrl+s exec "sudo -k && timew stop; systemctl suspend"
 bindsym $mod+Shift+u exec "sudo -k && timew stop; dm-tool switch-to-greeter"
 
 mode "Flatpak Launcher: (s)potify, S(i)gnal, (o)bsidian" {
@@ -277,3 +291,4 @@ bindsym $mod+space exec rofi -show window
 
 # pause/unpause current spotify song
 bindsym $mod+p exec "$HOME/bin/spotify_start_stop.sh"
+bindsym $mod+o exec "$HOME/bin/jabra_link_switch_profile.sh"

@@ -43,6 +43,10 @@ antigen apply
 
 source ~/.aliases
 
+if [[ $PWD == /var/home/* ]]; then
+    cd "${PWD/\/var/}"
+fi
+
 # show which alias to use when typing a long command
 YSU_MESSAGE_POSITION="after"
 # force usage of aliases:
@@ -57,7 +61,10 @@ YSU_MESSAGE_POSITION="after"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+eval "$(gh copilot alias -- zsh)"
+eval "$(atuin init zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/var/home/kajman/.lmstudio/bin"
+# End of LM Studio CLI section
 

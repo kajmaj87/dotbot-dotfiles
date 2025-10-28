@@ -37,3 +37,9 @@ map <leader>o <Action>(FileStructurePopup)
 
 set scrolloff=5
 set clipboard^=ideaput
+
+" Enable search highlighting
+set hlsearch
+" Make searches case insensitive unless they contain capital letters
+set ignorecase
+set smartcase

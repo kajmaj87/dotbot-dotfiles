@@ -17,12 +17,16 @@ separator_block_width=15
 color=#f5af19
 command=echo "u: $USER"
 interval=once
+[open_router]
+color=#7ccd7f
+command=echo "$(source ~/.overrides && ~/bin/open_router_credits.sh)"
+interval=15
 [spotify]
 command=$HOME/.config/i3blocks/spotify_track.sh
 interval=5
 [update_button]
 full_text=U:
-command=kitty --hold -- rpm-ostree status -v
+command=flatpak run org.wezfurlong.wezterm -e sh -c "rpm-ostree status -v && flatpak update; read -p 'Press Enter to exit'"
 separator=false
 [updates]
 command=echo "$(~/bin/check_updates_rpm_ostree.sh)"
@@ -34,15 +38,19 @@ separator=true
 interval=1
 background=#FF0000
 [task]
-command=echo "Current Task: $(~/.config/i3blocks/cheat_timew_time.sh 0.94)"
+command=echo "Current Task: $(distrobox enter base -- ~/.config/i3blocks/cheat_timew_time.sh 0.94)"
 separator=true
 interval=5
 [missing_hours]
-command=echo "D: $(~/bin/missing_hours.sh)"
+command=echo "C: $(distrobox enter base -- ~/bin/missing_cash.sh)"
 separator=true
-interval=120
+interval=1200
+[missing_cash]
+command=echo "T: $(distrobox enter base -- ~/bin/missing_cash.sh $(~/bin/missing_hours_today.sh))"
+separator=true
+interval=60
 [notifications_tag]
-full_text="Notifications:"
+full_text="N: "
 command=dunstctl history-pop
 separator=false
 [notifications_count]
@@ -52,6 +60,14 @@ separator=false
 [notifications_clear]
 full_text=[X]
 command=dunstctl close-all && dunstctl history-clear
+[service_failures_button]
+full_text=M:
+command=flatpak run org.wezfurlong.wezterm -e sh -c "echo Last check: \$(stat --format='%y' .last_ms_status_update | cut -d'.' -f1); grep failed ~/.services_status; read -p 'Press Enter to exit'"
+separator=false
+[service_failures]
+command=$HOME/.config/i3blocks/show_failed_services.sh
+interval=60
+markup=pango
 
 # Memory
 [memory]
@@ -64,7 +80,7 @@ separator=true
 # Load average
 [load_average_icon]
 full_text=⚖
-command=kitty htop
+command=flatpak run org.wezfurlong.wezterm -e sh -c "distrobox enter --name base -- htop"
 separator=false
 [load_average]
 command=$HOME/.config/i3blocks/loadavg.sh
@@ -75,7 +91,7 @@ markup=pango
 # Disk space
 [disk_space]
 label=📁
-command=df -h / | awk 'NR==2 {printf "u: %s f: %s\n", $3, $4}'
+command=df -h /sysroot | awk 'NR==2 {printf "u: %s f: %s\n", $3, $4}'
 interval=60
 separator=true
 
@@ -112,3 +128,18 @@ interval=1
 [weather]
 command=echo $(curl -s 'wttr.in/?format=1')
 interval=600
+separator=true
+[rubble]
+command=~/bin/usd_rub.sh
+interval=300
+markup=pango
+[edit_config]
+command=flatpak run org.wezfurlong.wezterm -e sh -c "distrobox enter --name base -- vim ~/.config/i3/config"
+full_text=C
+separator=false
+[edit_blocks_config]
+command=flatpak run org.wezfurlong.wezterm -e sh -c "distrobox enter --name base -- vim ~/.config/i3blocks/config"
+full_text=B
+[edit_blocks_config]
+command=~/bin/jabra_link_switch_profile.sh show
+interval=1
