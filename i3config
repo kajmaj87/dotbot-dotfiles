@@ -42,10 +42,10 @@ exec --no-startup-id flatpak run com.google.Chrome
 exec --no-startup-id flatpak run org.mozilla.firefox
 exec --no-startup-id distrobox enter base -- IT_OPUS_DEBUG_PORT=12000 IT_OPUS_HTTP_PORT=8082 IT_DB_PORT=3136 /home/kajman/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea
 exec --no-startup-id autorandr --change
-exec --no-startup-id distrobox enter base -- /usr/bin/emacs --daemon
 exec --no-startup-id numlockx on
-exec --no-startup-id feh --bg-fill $HOME/Downloads/PerseidsRadiant_Marcin_5500.jpg
-#exec setxkbmap -option 'grp:alt_shift_toggle' -layout pl,de
+exec --no-startup-id sleep 60 && feh --bg-fill $HOME/Downloads/PerseidsRadiant_Marcin_5500.jpg
+# exec setxkbmap -option 'grp:alt_shift_toggle' -layout pl,de
+# exec --no-startup-id distrobox enter base -- /usr/bin/emacs --daemon
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

@@ -11,6 +11,7 @@
   - ~/.config/nvim/lua/custom/plugins
   - ~/.config/systemd/user/default.target.wants
   - ~/.config/vim
+  - ~/.config/wezterm
   - ~/.distrobox
   - ~/.local/share/nvim/backup
   - ~/.local/share/nvim/undo
@@ -35,6 +36,7 @@
     ~/.config/systemd/user/default.target.wants/syncthing.service: syncthing.service 
     ~/.config/vim/after: vim/after
     ~/.config/vim/plugins: vim/plugins
+    ~/.config/wezterm/wezterm.lua: wezterm.lua
     ~/.distrobox/distrobox.ini: distrobox.ini
     ~/.environment: environment
     ~/.functions: functions
@@ -47,6 +49,8 @@
     ~/bin/kb: scripts/kb.py
     ~/bin/luxmed.sh: scripts/luxmed.sh
     ~/bin/setup_network_for_wsl2.sh: scripts/setup_network_for_wsl2.sh
+    ~/bin/jabra_link_switch_profile.sh: scripts/jabra_link_switch_profile.sh
+    ~/bin/spotify_start_stop.sh: scripts/spotify_start_stop.sh
     ~/.vim/vimrc:
         path: vim/vimrc
         create: true
