@@ -1,5 +1,5 @@
 # automatically check for updates in .dotfiles
-~/bin/auto_update.sh
+# ~/bin/auto_update.sh
 
 source ~/.environment
 
